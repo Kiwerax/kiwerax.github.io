@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A32 Panel - Bot Stealer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="index.html">Accueil</a>
+        <a href="bsteal.html">Bot Stealer</a>
+        <a href="fvm.html">FiveM Scrapper</a>
+        <a href="dbs.html">Database Searcher</a>
+        <a href="techs.html">Techs</a>
+        <a href="cracks.html">Jeux Cracks</a>
+        <a href="lcracks.html">Logiciels Cracks</a>
+        <a href="deconnexion.html">Déconnexion</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Discord Bot Stealer</h1>
+        <p>Invitez n'importe quel bot à partir de son ID Discord !</p>
+        <p>Steal any discord bot by it ID !</p>
+        
+        <!-- Barre de saisie de l'ID Discord -->
+        <div class="invite-section">
+            <label for="discord-id">Entrez l'ID Discord :</label>
+            <input type="text" id="discord-id" placeholder="ID Discord">
+            <button onclick="generateInviteLink()">Invite</button>
+        </div>
+    </div>
+
+    <script>
+        function generateInviteLink() {
+            const discordId = document.getElementById("discord-id").value;
+            
+            if (discordId) {
+                const inviteLink = `https://discord.com/oauth2/authorize?client_id=${discordId}&permissions=8&integration_type=0&scope=bot`;
+                window.open(inviteLink, '_blank');
+            } else {
+                alert("Veuillez entrer une ID Discord valide.");
+            }
+        }
+    </script>
+</body>
+</html>

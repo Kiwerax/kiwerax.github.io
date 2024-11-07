@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A32 Panel - FiveM Scrapper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="index.html">Accueil</a>
+        <a href="bsteal.html">Bot Stealer</a>
+        <a href="fvm.html">FiveM Scrapper</a>
+        <a href="dbs.html">Database Searcher</a>
+        <a href="techs.html">Techs</a>
+        <a href="cracks.html">Jeux Cracks</a>
+        <a href="lcracks.html">Logiciels Cracks</a>
+        <a href="deconnexion.html">Déconnexion</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Scrapper FiveM</h1>
+        <p>Avec cet outil, vous pouvez créer vos propres bases de données (FiveM) juste avec le CODE CFX du serveur (vous pouvez l'obtenir sur <a href="https://servers.fivem.net/">servers.fivem.net</a>).</p>
+        
+        <label for="code_cfx">CODE CFX :</label><br>
+        <input type="text" id="code_cfx" style="width: 300px;"><br>
+        
+        <button id="scrap-button">Scrap</button>
+        <button onclick="window.location.href='index.html'">Retour</button>
+        
+        <textarea id="result-console" readonly style="width: 100%; height: 300px; margin-top: 10px;"></textarea>
+    </div>
+
+    <script>
+        document.getElementById('scrap-button').addEventListener('click', function() {
+            const codeCfx = document.getElementById('code_cfx').value;
+            const resultConsole = document.getElementById('result-console');
+
+            if (codeCfx) {
+                const url = `https://servers-frontend.fivem.net/api/servers/single/${codeCfx}`;
+                
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Network response was not ok");
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        resultConsole.value = `Le serveur avec le code : ${codeCfx} a été scrappé avec succès. URL : ${url}\nDonnées : ${JSON.stringify(data, null, 2)}`;
+                    })
+                    .catch(error => {
+                        resultConsole.value = `Erreur : ${error.message}`;
+                    });
+            } else {
+                alert("Erreur : Veuillez fournir un code valide.");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A32 Panel - Database Searcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="index.html">Accueil</a>
+        <a href="bsteal.html">Bot Stealer</a>
+        <a href="fvm.html">FiveM Scrapper</a>
+        <a href="dbs.html">Database Searcher</a>
+        <a href="techs.html">Techs</a>
+        <a href="cracks.html">Jeux Cracks</a>
+        <a href="lcracks.html">Logiciels Cracks</a>
+        <a href="deconnexion.html">Déconnexion</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Database Searcher (FiveM)</h1>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Rechercher...">
+        </div>
+
+        <table id="infractionTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Licence</th>
+                    <th>Discord ID</th>
+                    <th>IP</th>
+                    <th>NOTE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Remplir avec JavaScript -->
+            </tbody>
+        </table>
+
+        <div class="pagination" id="pagination">
+            <!-- Pagination via JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Exemple de données pour les NATINFS
+        const data = [
+            { id: 1, name: "Dxsignz", licence: "0e88813eed21fa8cc51350b943177a6048eb3e59", discordid: 589913300649771008, ip: "86.244.157.224", note: "" },
+            { id: 2, name: "LuLu", licence: "b4a7ade1643b9c2f516dc97898b59ab1d029536e", discordid: 197866520406130688, ip: "185.153.151.34", note: "" },
+            { id: 999, name: "Tu veux ajouter quelqu'un ?", licence: "Avoir sa licence ?", discordid: 0, ip: "Ou même encore son IP ?", note: "discord.gg/A32panel" },
+        ];
+
+        const rowsPerPage = 5;
+        let currentPage = 1;
+
+        function displayTable(data, page = 1) {
+            const tableBody = document.querySelector("#infractionTable tbody");
+            tableBody.innerHTML = "";
+
+            const start = (page - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            const paginatedData = data.slice(start, end);
+
+            paginatedData.forEach(item => {
+                const row = `
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.name}</td>
+                        <td>${item.licence}</td>
+                        <td>${item.discordid}</td>
+                        <td>${item.ip}</td>
+                        <td>${item.note}</td>
+                    </tr>
+                `;
+                tableBody.insertAdjacentHTML("beforeend", row);
+            });
+
+            displayPagination(data);
+        }
+
+        function displayPagination(data) {
+            const pagination = document.getElementById("pagination");
+            pagination.innerHTML = "";
+
+            const pageCount = Math.ceil(data.length / rowsPerPage);
+            for (let i = 1; i <= pageCount; i++) {
+                const pageLink = document.createElement("a");
+                pageLink.href = "#";
+                pageLink.textContent = i;
+                if (i === currentPage) {
+                    pageLink.style.backgroundColor = "#009879";
+                    pageLink.style.color = "white";
+                }
+                pageLink.addEventListener("click", (event) => {
+                    event.preventDefault(); // Prevent default anchor behavior
+                    currentPage = i;
+                    displayTable(data, currentPage);
+                });
+                pagination.appendChild(pageLink);
+            }
+        }
+
+        // Filtrer les résultats
+        document.getElementById("search").addEventListener("input", function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredData = data.filter(item => 
+                item.name.toLowerCase().includes(searchTerm) ||
+                item.licence.toLowerCase().includes(searchTerm) ||
+                item.discordid.toString().includes(searchTerm) ||
+                item.ip.includes(searchTerm) ||
+                item.note.includes(searchTerm) ||
+                item.id.toString().includes(searchTerm)
+            );
+            currentPage = 1; // Reset to first page on search
+            displayTable(filteredData, currentPage);
+        });
+
+        // Afficher la table pour la première fois
+        displayTable(data);
+    </script>
+</body>
+</html>

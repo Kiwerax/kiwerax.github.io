@@ -1,0 +1,13 @@
+[
+    { "id": 1, "name": "bloxyb5", "licence": "0afdda362b3dc85b2612e5ef346dceb200a62de1", "discordid": "1266490750917677191", "ip": "88.178.131.1" },
+    { "id": 2, "name": "bloxyb6", "licence": "0afdda362b3dc85b2612e5ef346dceb200a62de1", "discordid": "1266490750917677191", "ip": "88.178.131.1" },
+    { "id": 3, "name": "Contravention", "licence": "Conduite à contre-sens", "discordid": "10000", "ip": "" },
+    { "id": 4, "name": "Contravention", "licence": "Conduit sans casque", "discordid": "5000", "ip": "" },
+    { "id": 5, "name": "Contravention", "licence": "Défaut de plaque d'immatriculation", "discordid": "10000", "ip": "" },
+    { "id": 6, "name": "Contravention", "licence": "Dissimulation de visage", "discordid": "5000", "ip": "" },
+    { "id": 7, "name": "Contravention", "licence": "Excès de vitesse 1-10 km/h", "discordid": "2500", "ip": "" },
+    { "id": 8, "name": "Contravention", "licence": "Excès de vitesse 11-120 km/h", "discordid": "5000", "ip": "" },
+    { "id": 9, "name": "Contravention", "licence": "Excès de vitesse 21-30 km/h", "discordid": "8500", "ip": "" },
+    { "id": 10, "name": "Contravention", "licence": "Excès de vitesse 31-50 km/h", "discordid": "10000", "ip": "" },
+    { "id": 11, "name": "Contravention", "licence": "Excès de vitesse +51 km/h", "discordid": "15000", "ip": "" }
+]

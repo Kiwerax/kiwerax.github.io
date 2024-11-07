@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A32 Panel - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .addons-section {
+            padding: 20px;
+            background-color: #2c2c2c; /* Couleur de fond de la section des addons */
+            border-radius: 8px; /* Coins arrondis */
+            margin-top: 20px; /* Espacement au-dessus */
+            color: white; /* Couleur du texte */
+        }
+        .addon-item {
+            display: flex;
+            justify-content: space-between; /* Alignement des éléments */
+            align-items: center; /* Centrer verticalement */
+            padding: 10px 0; /* Espacement vertical */
+            border-bottom: 1px solid #444; /* Ligne de séparation */
+        }
+        .addon-item:last-child {
+            border-bottom: none; /* Enlever la ligne pour le dernier élément */
+        }
+        .addon-name {
+            flex: 1; /* Prendre tout l'espace disponible */
+            font-size: 16px; /* Taille de police pour le nom de l'addon */
+        }
+        .get-button {
+            background-color: #00BFFF; /* Couleur du bouton */
+            border: none; /* Pas de bordure */
+            color: white; /* Couleur du texte */
+            padding: 10px 15px; /* Espacement du bouton */
+            cursor: pointer; /* Curseur de la souris */
+            border-radius: 5px; /* Coins arrondis du bouton */
+            transition: background-color 0.3s; /* Animation de la couleur de fond */
+        }
+        .get-button:hover {
+            background-color: #008FBF; /* Couleur du bouton au survol */
+        }
+        .back-button {
+            display: block; /* S'assurer que le bouton "Back" s'affiche comme un bloc */
+            margin-top: 20px; /* Espacement au-dessus */
+            background-color: #00BFFF; /* Couleur du bouton */
+            border: none; /* Pas de bordure */
+            color: white; /* Couleur du texte */
+            padding: 10px 15px; /* Espacement du bouton */
+            text-align: center; /* Centrer le texte */
+            cursor: pointer; /* Curseur de la souris */
+            border-radius: 5px; /* Coins arrondis du bouton */
+            transition: background-color 0.3s; /* Animation de la couleur de fond */
+        }
+        .back-button:hover {
+            background-color: #008FBF; /* Couleur du bouton au survol */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="index.html">Accueil</a>
+        <a href="bsteal.html">Bot Stealer</a>
+        <a href="fvm.html">FiveM Scrapper</a>
+        <a href="dbs.html">Database Searcher</a>
+        <a href="techs.html">Techs</a>
+        <a href="cracks.html">Jeux Cracks</a>
+        <a href="lcracks.html">Logiciels Cracks</a>
+        <a href="deconnexion.html">Déconnexion</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Logiciels Cracks</h1>
+        
+        <!-- Section pour afficher les addons -->
+        <div class="addons-section">
+            <h2>Tout les logiciels & Apps , gratuitement !</h2>
+            <div class="addon-item">
+                <span class="addon-name">TikTok Boost App</span>
+                <button class="get-button" onclick="window.open('https://play.google.com/store/apps/details?id=com.hkiapps.zefoynew')">Get</button>
+            </div>
+            <div class="addon-item">
+                <span class="addon-name">TikTok Boost App 2</span>
+                <button class="get-button" onclick="window.open('https://zefoy.com')">Get</button>
+            </div>
+            <div class="addon-item">
+                <span class="addon-name">Adobe Première Pro</span>
+                <button class="get-button" onclick="window.open('https://pixeldrain.com/u/aN5mGXWk')">Get</button>
+            </div>
+            <div class="addon-item">
+                <span class="addon-name">Adobe Photoshop</span>
+                <button class="get-button" onclick="window.open('https://pixeldrain.com/u/vCy7qcyB')">Get</button>
+            </div>
+            <div class="addon-item">
+                <span class="addon-name">WallPaper Engine</span>
+                <button class="get-button" onclick="window.open('https://pixeldrain.com/u/ZcCSz5EX')">Get</button>
+            </div>
+            <div class="addon-item">
+                <span class="addon-name">Adobe After Effects</span>
+                <button class="get-button" onclick="window.open('https://pixeldrain.com/u/ZcCSz5EX')">Get</button>  
+            </div>
+        </div>
+        
+        <button class="back-button" onclick="afficher_menu_boutons()">Back</button>
+        
+    </div>
+</body>
+</html>
